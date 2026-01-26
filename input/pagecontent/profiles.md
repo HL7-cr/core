@@ -4,10 +4,30 @@ Esta sección documenta los 13 perfiles FHIR definidos en la Guía de Implementa
 
 ## Perfiles de Datos Demográficos
 
+### CRCoreAddress
+**Perfil para Dirección**
+
+Define cómo estructurar información de dirección según estándares costarricenses.
+
+**Elemento Base:** Address (DataType)
+
+**Elementos Clave:**
+- Tipo de dirección (home, work, temp, etc.)
+- Líneas de dirección
+- Ciudad/Municipio
+- Provincia/Estado
+- Código postal
+- País
+- Período de validez
+
+---
+
 ### CRCorePatient
 **Perfil para Paciente**
 
 Define cómo representar información demográfica y clínica básica de un paciente en Costa Rica.
+
+**Elemento Base:** Patient
 
 **Elementos Clave:**
 - Identificadores: Cédula, Pasaporte, otros ID locales
@@ -16,22 +36,14 @@ Define cómo representar información demográfica y clínica básica de un paci
 - Datos de fallecimiento
 - Información de enlazamiento de pacientes
 
-**Obligatorio:**
-- Al menos un identificador
-- Nombre
-- Fecha de nacimiento o edad aproximada
-
-**Datos Extendidos:**
-- Idioma preferido
-- Comunicación preferida
-- Información de emergencia
-
 ---
 
 ### CRCorePractitioner
 **Perfil para Profesional de Salud**
 
 Define la representación de un profesional sanitario (médico, enfermero, etc.) en el sistema.
+
+**Elemento Base:** Practitioner
 
 **Elementos Clave:**
 - Identificadores: Cédula, Pasaporte, Licencia profesional
@@ -40,21 +52,14 @@ Define la representación de un profesional sanitario (médico, enfermero, etc.)
 - Especialidades
 - Número de colegiado
 
-**Obligatorio:**
-- Al menos un identificador
-- Nombre
-
-**Relaciones:**
-- Vinculación a Organizaciones
-- Calificaciones profesionales
-- Áreas de práctica
-
 ---
 
 ### CRCoreOrganization
 **Perfil para Organización de Salud**
 
 Define la estructura de instituciones sanitarias, clínicas, laboratorios, etc.
+
+**Elemento Base:** Organization
 
 **Elementos Clave:**
 - Identificadores: CAJA, EBAIS, códigos locales
@@ -65,34 +70,40 @@ Define la estructura de instituciones sanitarias, clínicas, laboratorios, etc.
 - Horas de operación
 - Información de acreditación
 
-**Obligatorio:**
-- Nombre
-- Tipo de organización
+---
 
-**Tipos Soportados:**
-- Hospital
-- Clínica privada
-- Centro de Salud (EBAIS)
-- Laboratorio
-- Farmacia
-- Otros proveedores
+### CRCorePractitionerRole
+**Perfil para Rol de Profesional**
+
+Define el rol que desempeña un profesional de salud en una organización específica.
+
+**Elemento Base:** PractitionerRole
+
+**Elementos Clave:**
+- Profesional asociado
+- Organización
+- Especialidad
+- Ubicación de trabajo
+- Horarios de disponibilidad
+- Métodos de contacto
 
 ---
 
-### CRCoreRelatedPerson
-**Perfil para Persona Relacionada**
+### CRCoreLocation
+**Perfil para Ubicación/Localización**
 
-Define contactos de emergencia, cuidadores y personas relacionadas con el paciente.
+Define sitios físicos donde se prestan servicios de salud.
+
+**Elemento Base:** Location
 
 **Elementos Clave:**
-- Relación con el paciente
-- Datos demográficos
-- Información de contacto
-- Idioma preferido
-
-**Obligatorio:**
-- Relación definida
-- Al menos un identificador o nombre
+- Nombre de la ubicación
+- Dirección física
+- Coordenadas geográficas
+- Organización responsable
+- Tipo de ubicación
+- Horarios de atención
+- Teléfono y contacto
 
 ---
 
@@ -103,6 +114,8 @@ Define contactos de emergencia, cuidadores y personas relacionadas con el pacien
 
 Define cómo registrar condiciones clínicas, diagnósticos y problemas de salud.
 
+**Elemento Base:** Condition
+
 **Elementos Clave:**
 - Código de diagnóstico (ICD-10-CM o SNOMED CT)
 - Paciente afectado
@@ -112,120 +125,14 @@ Define cómo registrar condiciones clínicas, diagnósticos y problemas de salud
 - Severidad
 - Notas clínicas
 
-**Obligatorio:**
-- Código de condición
-- Paciente
-- Estado
-
-**Estados Soportados:**
-- active (Activa)
-- recurrence (Recurrencia)
-- relapse (Recaída)
-- inactive (Inactiva)
-- remission (Remisión)
-- resolved (Resuelta)
-
----
-
-### CRCoreMedication
-**Perfil para Medicamento**
-
-Define medicamentos utilizados en prescripciones y administraciones.
-
-**Elementos Clave:**
-- Identificadores: Código SNOMED CT, código local
-- Nombre comercial y genérico
-- Forma farmacéutica
-- Concentración
-- Información de dosis
-- Ingredientes activos
-
-**Obligatorio:**
-- Código o descripción
-- Forma farmacéutica
-
-**Información Extendida:**
-- Cantidad disponible
-- Fecha de expiración
-- Condiciones de almacenamiento
-- Fabricante
-
----
-
-### CRCoreMedicationRequest
-**Perfil para Prescripción de Medicamento**
-
-Define cómo se registran las prescripciones médicas.
-
-**Elementos Clave:**
-- Medicamento prescrito
-- Paciente
-- Prescriptor
-- Instrucciones de dosificación
-- Duración del tratamiento
-- Cantidad
-- Reembolsable
-- Motivo de la prescripción
-
-**Obligatorio:**
-- Medicamento
-- Paciente
-- Prescriptor
-- Instrucciones
-
----
-
-### CRCoreMedicationAdministration
-**Perfil para Administración de Medicamento**
-
-Define el registro de medicamentos administrados a un paciente.
-
-**Elementos Clave:**
-- Medicamento administrado
-- Paciente
-- Administrador
-- Fecha y hora
-- Dosis y vía
-- Lugar de administración
-- Razón
-- Reacciones adversas
-
-**Obligatorio:**
-- Medicamento
-- Paciente
-- Fecha
-- Estado
-
----
-
-## Perfiles de Observaciones y Resultados
-
-### CRCoreObservation
-**Perfil para Observación Clínica General**
-
-Define observaciones clínicas básicas (signos vitales, características físicas, etc.).
-
-**Elementos Clave:**
-- Código de observación (LOINC o SNOMED CT)
-- Paciente
-- Valor (cantidad, rango, código, etc.)
-- Fecha y hora
-- Estado
-- Interpretación
-- Rango de referencia
-- Componentes (para observaciones compuestas)
-
-**Obligatorio:**
-- Código
-- Paciente
-- Valor o dataAbsentReason
-
 ---
 
 ### CRCoreAllergyIntolerance
 **Perfil para Alergia e Intolerancia**
 
 Define alergias e intolerancias a sustancias que afectan al paciente.
+
+**Elemento Base:** AllergyIntolerance
 
 **Elementos Clave:**
 - Sustancia alérgena (medicamento, alimento, etc.)
@@ -236,22 +143,14 @@ Define alergias e intolerancias a sustancias que afectan al paciente.
 - Fecha de identificación
 - Clínico que identifica
 
-**Obligatorio:**
-- Sustancia
-- Paciente
-- Tipo
-
-**Severidad:**
-- mild (Leve)
-- moderate (Moderada)
-- severe (Grave)
-
 ---
 
-### CRCoreImunization
+### CRCoreImmunization
 **Perfil para Inmunización/Vacunación**
 
 Define registro de vacunas administradas.
+
+**Elemento Base:** Immunization
 
 **Elementos Clave:**
 - Vacuna administrada
@@ -265,67 +164,76 @@ Define registro de vacunas administradas.
 - Reacciones adversas
 - Razón de no administración (si aplica)
 
-**Obligatorio:**
-- Vacuna
+---
+
+## Perfiles de Documentación Clínica
+
+### CRCoreComposition
+**Perfil para Composición/Documento Clínico**
+
+Define documentos clínicos como notas de evolución, informes médicos, etc.
+
+**Elemento Base:** Composition
+
+**Elementos Clave:**
+- Tipo de documento
 - Paciente
-- Fecha
-- Estado
+- Autor/Profesional
+- Fecha de creación
+- Estatus
+- Secciones del documento
+- Organización responsable
 
 ---
 
-### CRCoreAppointment
-**Perfil para Cita/Consulta**
+### CRCoreBundleDoc
+**Perfil para Agrupación de Documentos**
 
-Define citas médicas y encuentros programados.
+Define cómo agrupar múltiples recursos relacionados con un documento clínico.
+
+**Elemento Base:** Bundle
 
 **Elementos Clave:**
-- Tipo de cita
-- Paciente(s)
-- Profesional/Equipo
-- Fecha y hora
-- Duración
-- Estado
-- Razón
-- Descripción
-- Ubicación
-
-**Obligatorio:**
-- Paciente
-- Tipo
-- Participante
-- Fecha/Hora inicio
-- Estado
+- Tipo de bundle (document, transaction, etc.)
+- Identificador único
+- Timestamp
+- Entrada con recursos relacionados
 
 ---
 
-### CRCoreEncounter
-**Perfil para Encuentro Clínico**
+### CRCoreAuditEvent
+**Perfil para Evento de Auditoría**
 
-Define un encuentro clínico (consulta, internación, emergencia, etc.).
+Define el registro de acciones en el sistema para fines de auditoría y seguridad.
+
+**Elemento Base:** AuditEvent
 
 **Elementos Clave:**
-- Tipo de encuentro
-- Paciente
-- Profesional responsable
-- Organización
-- Fecha de inicio y término
-- Duración
-- Estado
-- Diagnósticos
-- Razón de la consulta
+- Tipo de evento
+- Subtipo
+- Acción realizada
+- Resultado del evento
+- Timestamp
+- Usuario/Agente responsable
+- Recursos afectados
+- Dirección IP
 
-**Obligatorio:**
-- Paciente
-- Tipo
-- Período
-- Estado
+---
 
-**Tipos de Encuentro:**
-- ambulatory (Ambulatorio)
-- emergency (Emergencia)
-- inpatient (Internación)
-- virtual (Virtual)
-- other (Otro)
+### CRCoreProvenance
+**Perfil para Provenance/Trazabilidad**
+
+Define el origen y trazabilidad de los datos e información clínica.
+
+**Elemento Base:** Provenance
+
+**Elementos Clave:**
+- Recursos relacionados
+- Agentes involucrados
+- Actividades realizadas
+- Timestamp
+- Firma digital (si aplica)
+- Información de autorización
 
 ---
 
@@ -337,18 +245,6 @@ Todos los perfiles son:
 - ✅ Documentados con ejemplos
 - ✅ Alineados con estándares internacionales
 - ✅ Adaptados al contexto costarricense
-
-## Validación
-
-Para validar un recurso contra estos perfiles:
-
-```bash
-# Usando el IG Publisher
-fhirpublisher -ig ig.ini -profile StructureDefinition/cr-core-patient
-
-# Usando herramientas en línea
-# https://validator.fhir.org/
-```
 
 ---
 

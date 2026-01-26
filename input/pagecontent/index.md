@@ -12,7 +12,7 @@ La Guía de Implementación Core de HL7 FHIR Costa Rica surge de la necesidad de
 
 Esta guía define:
 
-- **13 Perfiles FHIR** que especifican cómo representar entidades clínicas clave (pacientes, profesionales, organizaciones, condiciones, medicamentos, etc.)
+- **13 Profiles** que especifican cómo representar entidades clínicas clave (pacientes, profesionales, organizaciones, condiciones, medicamentos, etc.)
 - **6 Extensiones** que añaden atributos específicos al contexto costarricense
 - **Términos y conceptos** alineados con sistemas de codificación internacionales (SNOMED CT, LOINC, ICD-10)
 - **Pautas de implementación** para desarrolladores de sistemas de salud
