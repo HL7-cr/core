@@ -11,7 +11,7 @@ Esta página proporciona enlaces y instrucciones para descargar todos los recurs
 ### Especificación Completa
 
 **ZIP Archive - Todos los Recursos**
-- Descargar: [hl7.fhir.cr.core-0.0.1-ballot.zip](../../hl7.fhir.cr.core-0.0.1-ballot.zip)
+- Disponible en: [HL7 FHIR Registry](https://fhir.hl7.org/ig/HL7-cr/core/package.zip)
 - Tamaño: ~5 MB
 - Contenido:
   - ✅ Perfiles (StructureDefinition)
@@ -23,22 +23,22 @@ Esta página proporciona enlaces y instrucciones para descargar todos los recurs
 ### Por Componente
 
 #### Perfiles (StructureDefinitions)
-- [Descargar solo Perfiles](../../profiles-only.zip)
+- Los perfiles están disponibles en la página de Perfiles
 - 13 StructureDefinitions en JSON
 - Incluye documentación de diferencias
 
 #### Extensiones
-- [Descargar solo Extensiones](../../extensions-only.zip)
+- Las extensiones están disponibles en la página de Extensiones
 - 6 StructureDefinitions de extensión
 - Ejemplos de uso en JSON
 
 #### Ejemplos e Instancias
-- [Descargar Ejemplos](../../examples-only.zip)
+- Los ejemplos están disponibles en la sección Artefactos
 - 28 instancias de ejemplo
 - Pacientes, Organizaciones, Observaciones, etc.
 
 #### Terminología
-- [Descargar CodeSystems y ValueSets](../../terminology-only.zip)
+- Ver la [Guía de Implementación de Terminología](https://build.fhir.org/ig/HL7-cr/terminology/)
 - Sistemas de códigos locales
 - Mapeos entre sistemas
 
