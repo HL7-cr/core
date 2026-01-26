@@ -61,6 +61,14 @@ contact:
 pages:
   index.md:
     title: Inicio
+  guide.md:
+    title: Guía
+  profiles.md:
+    title: Perfiles
+  extensions.md:
+    title: Extensiones
+  downloads.md:
+    title: Descargas
   credits.md:
     title: Créditos
 
@@ -86,7 +94,11 @@ parameters:
 
 menu:
   Inicio: index.html
-  Artefactos: artifacts.html
+  Guía: guide.html
+  Perfiles: profiles.html
+  Extensiones: extensions.html
+  Terminología: https://build.fhir.org/ig/HL7-cr/terminology/
+  Descargas: downloads.html
   Créditos: credits.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
