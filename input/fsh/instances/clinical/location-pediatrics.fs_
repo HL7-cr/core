@@ -1,0 +1,25 @@
+Instance: LocationPediatrics
+InstanceOf: CRCoreLocation
+Usage: #example
+Title: "Ubicación - Pediatría"
+Description: "Departamento de Pediatría en hospital."
+
+* status = #active
+* name = "Departamento de Pediatría"
+* type = $SnomedCT#225746001 "Pediatric hospital department"
+* address
+  * text = "Avenida Central, San José, Costa Rica"
+  * line = "Avenida Central 1500"
+  * city = "San José"
+  * state = "San José"
+  * postalCode = "10101"
+  * country = "CR"
+* telecom[0]
+  * system = #phone
+  * value = "+506-2234-5678"
+  * use = #work
+* telecom[1]
+  * system = #email
+  * value = "pediatria@hospital.cr"
+  * use = #work
+* managingOrganization = Reference(OrganizationHospitalMetropolitano)

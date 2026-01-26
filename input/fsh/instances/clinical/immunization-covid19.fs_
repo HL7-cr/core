@@ -1,0 +1,25 @@
+Instance: ImmunizationCovid19
+InstanceOf: CRCoreImmunization
+Usage: #example
+Title: "Inmunización - Vacuna COVID-19"
+Description: "Registro de administración de vacuna contra SARS-CoV-2."
+
+* identifier
+  * system = "https://hl7.or.cr/fhir/identifier/client-registry"
+  * value = "101-001-immunization-covid19"
+* status = #completed
+* vaccineCode = $SnomedCT#1119349007 "Vaccine product containing only SARS-CoV-2 mRNA"
+  * text = "COVID-19 mRNA vaccine"
+* subject = Reference(PatientJuanMeneses)
+* occurrenceDateTime = "2025-11-15"
+* location = Reference(LocationPediatrics)
+* manufacturer
+  * reference = "https://www.moderna.com"
+  * display = "Moderna"
+* lotNumber = "COVID2025987654"
+* expirationDate = "2026-11-30"
+* performer
+  * function = $ImmunizationFunction#IMMUNIZ "Immunizer"
+  * actor = Reference(PractitionerDoctorGomez)
+* note
+  * text = "Booster dose de COVID-19. Administrada en brazo derecho. Sin efectos adversos reportados."

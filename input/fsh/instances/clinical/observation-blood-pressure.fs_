@@ -1,0 +1,26 @@
+Instance: ObservationBloodPressure
+InstanceOf: CRCoreObservation
+Usage: #example
+Title: "Observación - Presión Arterial"
+Description: "Medición de presión arterial sistólica y diastólica."
+
+* status = #final
+* category[0] = $ObservationCategory#vital-signs "Vital Signs"
+* code = $LOINC#85354-9 "Blood pressure systolic and diastolic"
+* subject = Reference(PatientJuanMeneses)
+* effectiveDateTime = "2025-12-11T10:30:00Z"
+* performer = Reference(PractitionerDoctorGomez)
+* component[0]
+  * code = $LOINC#8480-6 "Systolic blood pressure"
+  * valueQuantity
+    * value = 120
+    * unit = "mmHg"
+    * system = "http://unitsofmeasure.org"
+    * code = #mm[Hg]
+* component[1]
+  * code = $LOINC#8462-4 "Diastolic blood pressure"
+  * valueQuantity
+    * value = 80
+    * unit = "mmHg"
+    * system = "http://unitsofmeasure.org"
+    * code = #mm[Hg]

@@ -1,0 +1,21 @@
+Instance: ProcedureAppendectomy
+InstanceOf: CRCoreProcedure
+Usage: #example
+Title: "Procedimiento - Apendicectomía"
+Description: "Cirugía de extirpación del apéndice cecal."
+
+* identifier
+  * system = "https://hl7.or.cr/fhir/identifier/client-registry"
+  * value = "101-001-procedure-appendectomy"
+* status = #completed
+* category = $SnomedCT#103693007 "Diagnostic procedure"
+* code = $SnomedCT#80146002 "Excision of appendix"
+* subject = Reference(PatientJuanMeneses)
+* performedDateTime = "2020-06-15"
+* performer
+  * actor = Reference(PractitionerDoctorGomez)
+* location = Reference(LocationPediatrics)
+* bodySite = $SnomedCT#66754008 "Appendix"
+* outcome = $SnomedCT#385669000 "Successful"
+* note
+  * text = "Apendicectomía laparoscópica sin complicaciones. Patología: apendicitis aguda supurativa."

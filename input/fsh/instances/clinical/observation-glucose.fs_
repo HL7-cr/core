@@ -1,0 +1,26 @@
+Instance: ObservationGlucose
+InstanceOf: CRCoreObservation
+Usage: #example
+Title: "Observación - Glucosa en Sangre"
+Description: "Medición de glucosa en plasma en ayuno."
+
+* status = #final
+* category = $ObservationCategory#laboratory "Laboratory"
+* code = $LOINC#2345-7 "Glucose in plasma [mass/volume]"
+* subject = Reference(PatientJuanMeneses)
+* effectiveDateTime = "2025-12-11T08:00:00Z"
+* performer = Reference(OrganizationHospitalMetropolitano)
+* valueQuantity
+  * value = 110
+  * unit = "mg/dL"
+  * system = "http://unitsofmeasure.org"
+  * code = #mg/dL
+* interpretation = $ObservationInterpretation#H "High"
+* referenceRange
+  * low
+    * value = 70
+    * unit = "mg/dL"
+  * high
+    * value = 100
+    * unit = "mg/dL"
+  * text = "Rango normal: 70-100 mg/dL en ayuno"

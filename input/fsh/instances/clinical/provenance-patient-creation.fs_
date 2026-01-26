@@ -1,0 +1,28 @@
+Instance: ProvenancePatientCreation
+InstanceOf: CRCoreProvenance
+Usage: #example
+Title: "Procedencia - Creación de Registro de Paciente"
+Description: "Información sobre origen y creación del registro de paciente."
+
+* target = Reference(PatientJuanMeneses)
+* occurred = "2020-01-15"
+* recorded = "2020-01-15T09:30:00Z"
+* agent[0]
+  * type = $ProvenanceAgentType#Person
+  * role = $ProvenanceRole#originator
+  * who = Reference(PractitionerDoctorGomez)
+* agent[1]
+  * type = $ProvenanceAgentType#Organization
+  * role = $ProvenanceRole#custodian
+  * who = Reference(OrganizationHospitalMetropolitano)
+* entity
+  * role = #source
+  * what = Reference(DocumentReferenceLabResults)
+* signature
+  * type
+    * system = "urn:iso-std:iec:61208"
+    * code = #1.2.840.113549.1.7.2
+  * when = "2020-01-15T09:30:00Z"
+  * who = Reference(PractitionerDoctorGomez)
+  * sigFormat = "application/pkcs7-signature"
+  * data = "MIIDXTCCAkWgAwIBAgIJAKXEHhQBB..."

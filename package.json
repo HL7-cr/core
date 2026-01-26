@@ -1,0 +1,8 @@
+{
+  "name": "hl7.fhir.cr.core",
+  "version": "0.0.1-draft",
+  "description": "Costa Rica Core Implementation Guide",
+  "keywords": ["fhir", "hl7", "core", "costa-rica"],
+  "author": "HL7 Costa Rica",
+  "license": "CC0-1.0"
+}

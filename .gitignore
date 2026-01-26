@@ -1,0 +1,11 @@
+fsh-generated
+input-cache
+output
+temp
+template
+*.bat
+*.sh
+setup
+publication
+.registry
+building

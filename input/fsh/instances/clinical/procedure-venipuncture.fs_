@@ -1,0 +1,22 @@
+Instance: ProcedureVenipuncture
+InstanceOf: CRCoreProcedure
+Usage: #example
+Title: "Procedimiento - Venipuntura"
+Description: "Extracción de muestra de sangre venosa para análisis de laboratorio."
+
+* identifier
+  * system = "https://hl7.or.cr/fhir/identifier/client-registry"
+  * value = "101-001-procedure-venipuncture"
+* status = #completed
+* category = $SnomedCT#386053000 "Evaluation procedure"
+* code = $SnomedCT#397814003 "Venepuncture for blood test"
+* subject = Reference(PatientJuanMeneses)
+* performedDateTime = "2025-12-11T08:30:00Z"
+* performer
+  * actor = Reference(OrganizationHospitalMetropolitano)
+* location = Reference(LocationPediatrics)
+* bodySite = $SnomedCT#48760005 "Median antecubital vein"
+* outcome = $SnomedCT#385669000 "Successful"
+* report = Reference(DocumentReferenceLabResults)
+* note
+  * text = "Muestra obtenida para análisis de glucosa, perfil lipídico y hemograma completo."

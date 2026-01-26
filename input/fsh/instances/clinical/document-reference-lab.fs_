@@ -1,0 +1,23 @@
+Instance: DocumentReferenceLabResults
+InstanceOf: CRCoreDocumentReference
+Usage: #example
+Title: "Referencia a Documento - Resultados de Laboratorio"
+Description: "Referencias a resultados de análisis de laboratorio clínico."
+
+* identifier
+  * system = "https://hl7.or.cr/fhir/identifier/client-registry"
+  * value = "101-001-docref-lab-001"
+* status = #current
+* docStatus = #final
+* type = $LOINC#18716-1 "Vital signs, weight, height, head circumference, oximetry, BMI"
+* category = $DocumentReferenceType#LAB "Laboratorio"
+* subject = Reference(PatientJuanMeneses)
+* date = "2025-12-11T10:00:00Z"
+* author = Reference(OrganizationHospitalMetropolitano)
+* custodian = Reference(OrganizationHospitalMetropolitano)
+* content
+  * attachment
+    * contentType = #application/pdf
+    * url = "https://hospital.cr/documents/lab-results-101-001.pdf"
+    * title = "Resultados de Laboratorio - 11 Diciembre 2025"
+    * creation = "2025-12-11"

@@ -1,0 +1,32 @@
+Instance: AuditEventDataAccess
+InstanceOf: CRCoreAuditEvent
+Usage: #example
+Title: "Evento de Auditoría - Acceso a Datos de Paciente"
+Description: "Registro de auditoría de acceso a historia clínica de paciente."
+
+* category = $AuditEventAction#R "Read"
+* code = $AuditEventCode#110091 "User Authentication"
+  * display = "User Authentication"
+* action = #R
+* recorded = "2025-12-11T11:30:00Z"
+* outcome
+  * code = $AuditEventOutcome#0 "Success"
+* agent[0]
+  * type = $AuditEventAgentType#110150 "Application"
+  * role = $AuditEventAgentRole#110154 "Source"
+  * who = Reference(PractitionerDoctorGomez)
+  * requestor = true
+  * location = Reference(LocationPediatrics)
+* agent[1]
+  * type = $AuditEventAgentType#110153 "Web Server"
+  * role = $AuditEventAgentRole#110155 "Destination"
+  * who = Reference(OrganizationHospitalMetropolitano)
+  * requestor = false
+* source
+  * site = "Hospital Metropolitano"
+  * observer = Reference(OrganizationHospitalMetropolitano)
+  * type = $AuditEventSourceType#1 "User Device"
+* entity[0]
+  * role = $AuditEventEntityRole#1 "Patient"
+  * what = Reference(PatientJuanMeneses)
+  * securityLabel = $SecurityLabels#N "Normal"

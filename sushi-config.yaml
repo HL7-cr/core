@@ -1,0 +1,176 @@
+id: hl7.fhir.cr.core
+packageId: hl7.fhir.cr.core
+canonical: https://hl7.or.cr/fhir/core
+name: CRcore
+
+title: HL7 FHIR Costa Rica - Core
+description: >-
+  Guía de implementación de HL7 FHIR Costa Rica - Core. Esta guía de implementación
+  define los recursos, perfiles, extensiones y otros artefactos FHIR necesarios para
+  apoyar la interoperabilidad de la información de salud en Costa Rica.
+
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: cgp
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: draft
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 0
+
+status: draft
+version: 0.0.1-ballot
+fhirVersion: 5.0.0
+language: es
+copyrightYear: 2025+
+date: 2025-11-29
+copyright: >-
+  Utilizado con permiso de HL7 International, todos los derechos reservados Licencia Creative Commons
+
+releaseLabel: ci-build
+license: CC-BY-4.0
+jurisdiction: urn:iso:std:iso:3166#CR "Costa Rica"
+publisher:
+  name: Iniciativa HL7 Costa Rica
+  url: https://hl7.or.cr
+  email: info@hl7.or.cr
+
+contact:
+  - name: Iniciativa HL7 Costa Rica
+    telecom:
+      - system: email
+        value: info@hl7.or.cr
+        use: work
+      - system: url
+        value: https://hl7.or.cr
+        use: work
+
+# The dependencies property corresponds to IG.dependsOn. The key is the
+# package id and the value is the version (or dev/current). For advanced
+# use cases, the value can be an object with keys for id, uri, and version.
+#
+#dependencies:
+#  fhir.cr.terminology:
+#    uri: https://hl7.or.cr/fhir/terminology
+#    version: dev
+#    id: fhir.cr.terminology
+#   hl7.fhir.us.mcode:
+#     id: mcode
+#     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
+#     version: 1.0.0
+
+pages:
+  index.md:
+    title: Inicio
+  credits.md:
+    title: Créditos
+
+# The parameters property represents IG.definition.parameter. Rather
+# than a list of code/value pairs (as in the ImplementationGuide
+# resource), the code is the YAML key. If a parameter allows repeating
+# values, the value in the YAML should be a sequence/array.
+# For parameters defined by TERMINOLOGY FHIR see:
+# http://build.fhir.org/codesystem-guide-parameter-code.html
+# For parameters defined by the FHIR Tools IG see:
+# http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
+#
+parameters:
+  excludettl: true
+  excludexml: true
+  show-inherited-invariants: false
+#  apply-jurisdiction: true
+#  apply-publisher: true
+#  autoload-resources: true
+  pin-canonicals: pin-all
+#  apply-version: false
+  i18n-default-lang: es
+
+menu:
+  Inicio: index.html
+  Artefactos: artifacts.html
+  Créditos: credits.html
+
+# ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
+# │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
+# │  resource. These properties are less commonly needed than those above.                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+#
+# Those who need more control or want to add additional details to the contact values can use
+# contact directly and follow the format outlined in the ImplementationGuide resource and
+# ContactDetail.
+#
+
+# Groups can control certain aspects of the IG generation.  The IG
+# documentation recommends that authors use the default groups that
+# are provided by the templating framework, but if authors want to
+# use their own instead, they can use the mechanism below.  This will
+# create IG.definition.grouping entries and associate the individual
+# resource entries with the corresponding groupIds. If a resource
+# is specified by id or name, SUSHI will replace it with the correct
+# URL when generating the IG JSON.
+#
+# groups:
+#   GroupA:
+#     name: Group A
+#     description: The Alpha Group
+#     resources:
+#     - StructureDefinition/animal-patient
+#     - StructureDefinition/arm-procedure
+#   GroupB:
+#     name: Group B
+#     description: The Beta Group
+#     resources:
+#     - StructureDefinition/bark-control
+#     - StructureDefinition/bee-sting
+#
+#
+# The ImplementationGuide resource defines several other properties
+# not represented above. These properties can be used as-is and
+# should follow the format defined in ImplementationGuide:
+# * date
+# * meta
+# * implicitRules
+# * language
+# * text
+# * contained
+# * extension
+# * modifierExtension
+# * experimental
+# * useContext
+# * copyright
+# * packageId
+#
+#
+# ╭──────────────────────────────────────────SUSHI flags───────────────────────────────────────────╮
+# │  The flags below configure aspects of how SUSHI processes FSH.                                 │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+# The FSHOnly flag indicates if only FSH resources should be exported.
+# If set to true, no IG related content will be generated.
+# The default value for this property is false.
+#
+# FSHOnly: false
+#
+#
+# When set to true, the "short" and "definition" field on the root element of an Extension will
+# be set to the "Title" and "Description" of that Extension. Default is true.
+#
+# applyExtensionMetadataToRoot: true
+#
+#
+# The instanceOptions property is used to configure certain aspects of how SUSHI processes instances.
+# See the individual option definitions below for more detail.
+#
+instanceOptions:
+  # When set to true, slices must be referred to by name and not only by a numeric index in order to be used
+  # in an Instance's assignment rule. All slices appear in the order in which they are specified in FSH rules.
+  # While SUSHI defaults to false for legacy reasons, manualSliceOrding is recommended for new projects.
+  manualSliceOrdering: true # true | false
+  # Determines for which types of Instances SUSHI will automatically set meta.profile
+  # if InstanceOf references a profile:
+  #
+  # setMetaProfile: always # always | never | inline-only | standalone-only
+  #
+  #
+  # Determines for which types of Instances SUSHI will automatically set id
+  # if InstanceOf references a profile:
+  #
+  # setId: always # always | standalone-only

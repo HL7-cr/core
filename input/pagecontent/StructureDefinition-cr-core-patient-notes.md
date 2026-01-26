@@ -1,0 +1,1 @@
+Nota: los comentarios son bienvenidos y deben dirigirse al repositorio de Github (https://github.com/HL7-cr/core).

@@ -1,0 +1,21 @@
+Instance: ConditionDiabetes
+InstanceOf: CRCoreCondition
+Usage: #example
+Title: "Condición - Diabetes Tipo 2"
+Description: "Diagnóstico de diabetes mellitus tipo 2."
+
+* identifier
+  * system = "https://hl7.or.cr/fhir/identifier/client-registry"
+  * value = "101-001-condition-diabetes"
+* clinicalStatus = $ConditionClinicalStatus#active
+* verificationStatus = $ConditionVerificationStatus#confirmed
+* category = $ConditionCategoryCode#problem-list-item
+* severity = $SnomedCT#24484000 "Severe"
+* code = $SnomedCT#44054006 "Diabetes mellitus type 2"
+* subject = Reference(PatientJuanMeneses)
+* onsetDateTime = "2015-03-20"
+* recordedDate = "2025-12-11"
+* stage
+  * summary = $SnomedCT#255231005 "Complication"
+* note
+  * text = "Paciente con control subóptimo de glucosa. HbA1c última: 7.8%. Requiere ajuste de medicamentos."

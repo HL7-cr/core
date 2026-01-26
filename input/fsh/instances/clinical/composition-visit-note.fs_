@@ -1,0 +1,39 @@
+Instance: CompositionVisitNote
+InstanceOf: CRCoreComposition
+Usage: #example
+Title: "Composición - Nota de Visita Clínica"
+Description: "Resumen estructurado de una consulta clínica."
+
+* identifier
+  * system = "https://hl7.or.cr/fhir/identifier/client-registry"
+  * value = "101-001-composition-visit-001"
+* status = #final
+* type = $LOINC#34108-1 "Outpatient note"
+* category = $DocumentReferenceCategory#clinical-note
+* subject = Reference(PatientJuanMeneses)
+* date = "2025-12-11"
+* author = Reference(PractitionerDoctorGomez)
+* title = "Nota de Consulta Clínica - Seguimiento Diabetes"
+* attester
+  * mode = #legal
+  * time = "2025-12-11"
+  * party = Reference(PractitionerDoctorGomez)
+* custodian = Reference(OrganizationHospitalMetropolitano)
+* section[0]
+  * title = "Presentación Clínica"
+  * code = $LOINC#10164-2 "History of present illness"
+  * text
+    * status = #generated
+    * div = "<div xmlns='http://www.w3.org/1999/xhtml'>Paciente acude para seguimiento de diabetes mellitus tipo 2. Refiere fatiga y micción frecuente.</div>"
+* section[1]
+  * title = "Examen Físico"
+  * code = $LOINC#10166-7 "Physical examination"
+  * text
+    * status = #generated
+    * div = "<div xmlns='http://www.w3.org/1999/xhtml'>FC: 78, TA: 120/80, FR: 16, T: 37°C. Peso: 72 kg, Talla: 172 cm.</div>"
+* section[2]
+  * title = "Impresión y Plan"
+  * code = $LOINC#10164-2 "Assessment and Plan"
+  * text
+    * status = #generated
+    * div = "<div xmlns='http://www.w3.org/1999/xhtml'>Diabetes tipo 2 con control subóptimo. Aumentar dosis de metformina. Solicitar HbA1c y perfil lipídico.</div>"

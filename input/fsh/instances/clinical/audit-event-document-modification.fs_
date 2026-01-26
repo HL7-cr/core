@@ -1,0 +1,28 @@
+Instance: AuditEventDocumentModification
+InstanceOf: CRCoreAuditEvent
+Usage: #example
+Title: "Evento de Auditoría - Modificación de Documento Clínico"
+Description: "Registro de auditoría de modificación de nota clínica."
+
+* category = $AuditEventAction#U "Update"
+* code = $AuditEventCode#110006 "Delete"
+  * display = "Resource Modification"
+* action = #U
+* recorded = "2025-12-11T12:15:00Z"
+* outcome
+  * code = $AuditEventOutcome#0 "Success"
+* agent
+  * type = $AuditEventAgentType#110150 "Application"
+  * role = $AuditEventAgentRole#110154 "Source"
+  * who = Reference(PractitionerDoctorGomez)
+  * requestor = true
+  * location = Reference(LocationPediatrics)
+* source
+  * site = "Sistema EMR - Costa Rica"
+  * observer = Reference(OrganizationHospitalMetropolitano)
+  * type = $AuditEventSourceType#1 "User Device"
+* entity
+  * role = $AuditEventEntityRole#4 "Report"
+  * what = Reference(DocumentReferenceLabResults)
+  * securityLabel = $SecurityLabels#L "Limited"
+  * name = "Actualización de resultados de laboratorio"

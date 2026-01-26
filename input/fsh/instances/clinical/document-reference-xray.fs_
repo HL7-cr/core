@@ -1,0 +1,23 @@
+Instance: DocumentReferenceXray
+InstanceOf: CRCoreDocumentReference
+Usage: #example
+Title: "Referencia a Documento - Radiografía de Tórax"
+Description: "Referencia a estudio de imagenología radiográfica."
+
+* identifier
+  * system = "https://hl7.or.cr/fhir/identifier/client-registry"
+  * value = "101-001-docref-xray-001"
+* status = #current
+* docStatus = #final
+* type = $LOINC#71020-1 "Chest X-ray"
+* category = $DocumentReferenceType#IMG "Imagenología"
+* subject = Reference(PatientJuanMeneses)
+* date = "2025-12-10T14:30:00Z"
+* author = Reference(PractitionerDoctorGomez)
+* custodian = Reference(OrganizationHospitalMetropolitano)
+* content
+  * attachment
+    * contentType = #application/dicom
+    * url = "https://hospital.cr/imaging/xray-101-001.dcm"
+    * title = "Radiografía de Tórax PA y Lateral"
+    * creation = "2025-12-10"

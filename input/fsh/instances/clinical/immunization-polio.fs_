@@ -1,0 +1,25 @@
+Instance: ImmunizationPolio
+InstanceOf: CRCoreImmunization
+Usage: #example
+Title: "Inmunización - Vacuna Polio"
+Description: "Registro de administración de vacuna antipoliovirus."
+
+* identifier
+  * system = "https://hl7.or.cr/fhir/identifier/client-registry"
+  * value = "101-001-immunization-polio"
+* status = #completed
+* vaccineCode = $SnomedCT#14745005 "Poliovirus vaccine"
+  * text = "Inactivated poliomyelitis vaccine"
+* subject = Reference(PatientJuanMeneses)
+* occurrenceDateTime = "2025-12-05"
+* location = Reference(LocationPediatrics)
+* manufacturer
+  * reference = "https://www.sanofi-pasteur.com"
+  * display = "Sanofi Pasteur"
+* lotNumber = "POL2025123456"
+* expirationDate = "2027-12-31"
+* performer
+  * function = $ImmunizationFunction#IMMUNIZ "Immunizer"
+  * actor = Reference(PractitionerDoctorGomez)
+* note
+  * text = "Vacuna administrada en brazo izquierdo. Dosis 3 de esquema de 3 dosis completadas."

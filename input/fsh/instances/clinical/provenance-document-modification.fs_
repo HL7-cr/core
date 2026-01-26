@@ -1,0 +1,32 @@
+Instance: ProvenanceDocumentModification
+InstanceOf: CRCoreProvenance
+Usage: #example
+Title: "Procedencia - Modificación de Documento Clínico"
+Description: "Información sobre procedencia de cambios en documento clínico."
+
+* target = Reference(DocumentReferenceLabResults)
+* occurred = "2025-12-11T10:15:00Z"
+* recorded = "2025-12-11T10:20:00Z"
+* agent[0]
+  * type = $ProvenanceAgentType#Person
+  * role = $ProvenanceRole#editor
+  * who = Reference(PractitionerDoctorGomez)
+  * onBehalfOf = Reference(OrganizationHospitalMetropolitano)
+* agent[1]
+  * type = $ProvenanceAgentType#Organization
+  * role = $ProvenanceRole#custodian
+  * who = Reference(OrganizationHospitalMetropolitano)
+* entity[0]
+  * role = #source
+  * what = Reference(ObservationGlucose)
+* entity[1]
+  * role = #revision
+  * what = Reference(DocumentReferenceLabResults)
+* signature
+  * type
+    * system = "urn:iso-std:iec:61208"
+    * code = #1.2.840.113549.1.9.16.3.36
+  * when = "2025-12-11T10:20:00Z"
+  * who = Reference(PractitionerDoctorGomez)
+  * sigFormat = "application/jose+json"
+  * data = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."
