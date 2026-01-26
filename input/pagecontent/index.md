@@ -1,8 +1,8 @@
 # HL7 FHIR Costa Rica - Guía de Implementación Core
 
-### ⚠️ ESTADO DE DESARROLLO - DRAFT EN REVISIÓN
+### Consideraciones Importantes
 
-Esta Guía de Implementación se encuentra en fase **DRAFT (Borrador)** y está actualmente en revisión y desarrollo.
+Esta Guía de Implementación se encuentra en fase **Draft (Borrador)** y está actualmente en revisión y desarrollo.
 
 **Uso Permitido:**
 - ✅ Implementación de prototipos
@@ -11,7 +11,7 @@ Esta Guía de Implementación se encuentra en fase **DRAFT (Borrador)** y está 
 - ✅ Evaluación técnica
 
 **NO permitido en producción:**
-- ❌ Esta guía NO debe utilizarse en ambientes de producción hasta que sea oficializada como normativa por el Ministerio de Salud de Costa Rica
+- Esta guía **NO debe utilizarse en ambientes de producción** hasta que sea oficializada como normativa por el Ministerio de Salud de Costa Rica
 
 ### Oficialización de Guías Nacionales
 
