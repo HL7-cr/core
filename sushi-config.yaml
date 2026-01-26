@@ -67,6 +67,8 @@ pages:
     title: Perfiles
   extensions.md:
     title: Extensiones
+  gaudi-digital-sealing.md:
+    title: GAUDÍ - Sellado Digital
   downloads.md:
     title: Descargas
   credits.md:
@@ -96,6 +98,7 @@ menu:
   Inicio: index.html
   Guía: guide.html
   Perfiles: profiles.html
+  GAUDÍ - Sellado Digital: gaudi-digital-sealing.html
   Extensiones: extensions.html
   Artefactos: artifacts.html
   Terminología: https://build.fhir.org/ig/HL7-cr/terminology/
