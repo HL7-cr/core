@@ -1,5 +1,25 @@
 # HL7 FHIR Costa Rica - Guía de Implementación Core
 
+### ⚠️ ESTADO DE DESARROLLO - DRAFT EN REVISIÓN
+
+Esta Guía de Implementación se encuentra en fase **DRAFT (Borrador)** y está actualmente en revisión y desarrollo.
+
+**Uso Permitido:**
+- ✅ Implementación de prototipos
+- ✅ Desarrollo de sistemas
+- ✅ Capacitación y entrenamiento
+- ✅ Evaluación técnica
+
+**NO permitido en producción:**
+- ❌ Esta guía NO debe utilizarse en ambientes de producción hasta que sea oficializada como normativa por el Ministerio de Salud de Costa Rica
+
+### Oficialización de Guías Nacionales
+
+El **Ministerio de Salud de Costa Rica** es la autoridad competente que oficializa las Guías de Implementación FHIR como normativas nacionales. Solo las guías que han sido formalmente aprobadas y publicadas como normativas pueden ser utilizadas en sistemas de producción y en la prestación de servicios de salud.
+
+Para conocer el estado oficial de esta guía, contacte al Ministerio de Salud o a la Iniciativa HL7 Costa Rica en: **info@hl7.or.cr**
+{:.stu-note}
+
 ## Introducción
 
 Bienvenido a la Guía de Implementación Core (IG) de HL7 FHIR para Costa Rica. Esta especificación define los perfiles, extensiones y terminología base para la interoperabilidad de datos clínicos en el contexto costarricense.
