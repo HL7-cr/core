@@ -87,11 +87,9 @@ parameters:
   excludettl: true
   excludexml: true
   show-inherited-invariants: false
-#  apply-jurisdiction: true
-#  apply-publisher: true
-#  autoload-resources: true
+  apply-jurisdiction: true
+  apply-publisher: true
   pin-canonicals: pin-all
-#  apply-version: false
   i18n-default-lang: es
 
 menu:

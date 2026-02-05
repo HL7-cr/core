@@ -26,8 +26,9 @@ RuleSet:            ProfileMeta
 * ^experimental = false
 * ^publisher = "HL7 FHIR Costa Rica"
 * ^date = "2025-11-08"
-
 * ^contact.name = "HL7 FHIR Costa Rica"
-* ^contact.telecom[0].system = #url
-* ^contact.telecom[=].value = "https://www.hl7.or.cr"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "https://www.hl7.or.cr"
+* ^jurisdiction = urn:iso:std:iso:3166#CR
+* ^language = #es
 * ^copyright = "Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional."
