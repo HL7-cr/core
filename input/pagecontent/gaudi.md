@@ -195,15 +195,15 @@ Validación de sello (verificación de integridad)
 
 ```
 ┌──────────────────────────────────────┐
-│ Laboratorio Nacional                  │
-│ Resultado de Prueba COVID-19          │
+│ Laboratorio Nacional                 │
+│ Resultado de Prueba COVID-19         │
 ├──────────────────────────────────────┤
-│ ✓ Bundledocument con Observation      │
-│ ✓ Datos del paciente (Patient)        │
-│ ✓ Organización responsable            │
-│ ✓ Sellado con GAUDÍ                   │
-│ ✓ Referencia: GAUDI-2026-BCR-00456    │
-│ ✓ Timestamp: 2026-01-20T10:35:00Z     │
+│ ✓ Bundledocument con Observation     │
+│ ✓ Datos del paciente (Patient)       │
+│ ✓ Organización responsable           │
+│ ✓ Sellado con GAUDÍ                  │
+│ ✓ Referencia: GAUDI-2026-BCR-0046    │
+│ ✓ Timestamp: 2026-01-20T10:35:00     │
 ├──────────────────────────────────────┤
 │ ESTADO: ÍNTEGRO Y VERIFICADO         │
 └──────────────────────────────────────┘
@@ -213,17 +213,17 @@ Validación de sello (verificación de integridad)
 
 ```
 ┌──────────────────────────────────────┐
-│ Clínica Médica Central                │
-│ Nota de Consulta - Cardiología        │
+│ Clínica Médica Central               │
+│ Nota de Consulta - Cardiología       │
 ├──────────────────────────────────────┤
-│ ✓ Composition: Estructura clínica      │
-│ ✓ Observaciones diagnósticas          │
-│ ✓ Medicamentos prescritos             │
-│ ✓ Firma del médico (dentro de Comp.)  │
+│ ✓ Composition: Estructura clínic     │
+│ ✓ Observaciones diagnósticas         │
+│ ✓ Medicamentos prescritos            │
+│ ✓ Firma del médico (dentro de Comp.) │
 │ ✓ Sello GAUDÍ en Bundle              │
 │ ✓ Cadena de confianza completa       │
 ├──────────────────────────────────────┤
-│ ESTADO: VÁLIDO LEGALMENTE             │
+│ ESTADO: VÁLIDO LEGALMENTE            │
 └──────────────────────────────────────┘
 ```
 
@@ -231,16 +231,16 @@ Validación de sello (verificación de integridad)
 
 ```
 ┌──────────────────────────────────────┐
-│ Instituto Médico Legal                │
-│ Informe de Autopsia (Documento)       │
+│ Instituto Médico Legal               │
+│ Informe de Autopsia (Documento)      │
 ├──────────────────────────────────────┤
 │ ✓ Bundle document con datos completos│
-│ ✓ Múltiples observaciones clínicas    │
+│ ✓ Múltiples observaciones clínicas   │
 │ ✓ Sellado GAUDÍ (prueba de tiempo)   │
-│ ✓ No repudiable                       │
+│ ✓ No repudiable                      │
 │ ✓ Válido como prueba forense         │
 ├──────────────────────────────────────┤
-│ ESTADO: LEGAL Y ADMISIBLE             │
+│ ESTADO: LEGAL Y ADMISIBLE            │
 └──────────────────────────────────────┘
 ```
 
@@ -319,5 +319,3 @@ Por definir
 ### Referencias y Estándares
 
 Por definir
-
-
