@@ -1,14 +1,14 @@
-## GAUDÍ: Sellado de Tiempo Digital
-
 ### Introducción
 
-**GAUDÍ** (Generador de Autoridad de Documento por Unidad de Identificación) es el sistema oficial de sellado de tiempo del Banco Central de Costa Rica. Proporciona un mecanismo confiable y legalmente reconocido para sellar documentos electrónicos, incluyendo recursos FHIR, con una marca temporal verificable e irrefutable.
+<img src="assets/images/gaudi_logo.png" style="width: 80px; margin-top: 12px;">
+
+**GAUDÍ** (Generador de Autoridad de Documento por Unidad de Identificación) es una solución tecnológica de acceso electrónico que permite realizar una serie de funcionalidades con su tarjeta de firma digital, tales como firmar y validar documentos y la autenticación de los suscriptores. Le ofrece una serie de funcionalidades que le permiten autenticarse y realizar firmas.
+
+Ademas es el sistema oficial de sellado de tiempo del Banco Central de Costa Rica. Proporciona un mecanismo confiable y legalmente reconocido para sellar documentos electrónicos, incluyendo recursos FHIR, con una marca temporal verificable e irrefutable.
 
 En el contexto de interoperabilidad clínica FHIR, GAUDÍ garantiza que los documentos clínicos digitales (Bundles de tipo "document") pueden ser sellados con una prueba de existencia e integridad reconocida legalmente.
 
-### Contexto Legal y Normativo
-
-#### Marco Legal de Costa Rica
+### Marco Legal de Costa Rica
 
 GAUDÍ opera bajo:
 
@@ -17,24 +17,23 @@ GAUDÍ opera bajo:
 - **Regulaciones del Ministerio de Salud** para documentación clínica electrónica
 - **Normas HIPAA** equivalentes para sistemas de salud
 
-#### Reconocimiento Oficial
+### Reconocimiento Oficial
 
 ```
 ┌─────────────────────────────────────────────────────────┐
 │  Banco Central de Costa Rica                            │
 │  Sistema de Sellado de Tiempo Oficial                   │
 │                                                         │
-│  ✓ Autoridad Certificadora Nacional reconocida         │
-│  ✓ Infraestructura PKI de clase alta                   │
-│  ✓ Disponibilidad 24/7/365                             │
-│  ✓ Sincronización UTC con servidores internacionales   │
-│  ✓ Auditoría permanente e inmutable                    │
+│  ✓ Autoridad Certificadora Nacional reconocida          │
+│  ✓ Infraestructura PKI de clase alta                    │
+│  ✓ Disponibilidad 24/7/365                              │
+│  ✓ Sincronización UTC con servidores internacionales    │
+│  ✓ Auditoría permanente e inmutable                     │
 └─────────────────────────────────────────────────────────┘
 ```
 
-### Alcance: Documentos Clínicos FHIR
 
-#### Tipos de Bundle que pueden Sellarse
+### Tipos de Bundle que pueden Sellarse
 
 Solo los Bundles de tipo **"document"** pueden ser sellados con GAUDÍ:
 
@@ -49,18 +48,7 @@ Bundle {
 }
 ```
 
-#### Bundles NO Sellables
-
-Los Bundles de otro tipo **no deben sellarse**:
-
-- ❌ `type = #transaction` - Para operaciones en sistemas
-- ❌ `type = #batch` - Para procesamiento por lotes
-- ❌ `type = #history` - Para históricos de versiones
-- ❌ `type = #searchset` - Para resultados de búsqueda
-
-### Estructura del Sello GAUDÍ en FHIR
-
-#### Elemento Signature del Bundle
+### Elemento Signature del Bundle
 
 ```json
 {
@@ -108,32 +96,12 @@ Los Bundles de otro tipo **no deben sellarse**:
       "display": "Ministerio de Salud de Costa Rica"
     },
     "sigFormat": "application/gaudi+json",
-    "data": "MIIDxDCC...base64-encoded-gaudi-signature...",
-    "extension": [
-      {
-        "url": "https://hl7.or.cr/fhir/StructureDefinition/gaudi-timestamp",
-        "valueDateTime": "2026-01-20T10:35:00.123Z"
-      },
-      {
-        "url": "https://hl7.or.cr/fhir/StructureDefinition/gaudi-reference",
-        "valueString": "GAUDI-2026-BCR-001234"
-      },
-      {
-        "url": "https://hl7.or.cr/fhir/StructureDefinition/gaudi-certificate",
-        "valueString": "MIIFXzCCA0e...base64-encoded-bcr-certificate..."
-      },
-      {
-        "url": "https://hl7.or.cr/fhir/StructureDefinition/document-hash-algorithm",
-        "valueString": "SHA256"
-      }
-    ]
+    "data": "MIIDxDCC...base64-encoded-gaudi-signature..."
   }
 }
 ```
 
-### Flujo de Sellado GAUDÍ
-
-#### 1. Crear Documento Clínico (Bundle type=document)
+### 1. Crear Documento Clínico (Bundle type=document)
 
 ```
 Profesional Clínico
@@ -145,7 +113,7 @@ Agrupa recursos en Bundle tipo "document"
 Bundle listo para sellado
 ```
 
-#### 2. Preparar para Sellado
+### 2. Preparar para Sellado
 
 ```
 Bundle JSON Canonizado
@@ -155,10 +123,10 @@ Calcular SHA-256 del contenido
 Generar hash verificable
 ```
 
-#### 3. Solicitar Sello GAUDÍ
+### 3. Solicitar Sello GAUDÍ
 
 ```
-POST https://servidorgaudí.bcr.fi.cr/api/v1/sello-temporal
+POST https://urlfake-gaud.fi.cr/api/v1/sello-temporal
 
 Solicitud:
 {
@@ -192,7 +160,7 @@ Respuesta:
 }
 ```
 
-#### 4. Incorporar Sello en Bundle
+### 4. Incorporar Sello en Bundle
 
 El sello GAUDÍ se añade al elemento `Bundle.signature` con:
 
@@ -201,7 +169,7 @@ El sello GAUDÍ se añade al elemento `Bundle.signature` con:
 - **Certificado X.509** de GAUDÍ
 - **Firma criptográfica** del documento
 
-#### 5. Distribuir Documento Sellado
+### 5. Distribuir Documento Sellado
 
 ```
 Bundle con Sello GAUDÍ
@@ -213,37 +181,7 @@ Sistema receptor
 Validación de sello (verificación de integridad)
 ```
 
-### Validación de Documentos Sellados
-
-#### Proceso de Verificación
-
-```javascript
-// 1. Extraer sello GAUDÍ
-const sello = bundle.signature;
-const hashDocumento = sello.extension
-  .find(e => e.url.includes('document-hash'))?.value;
-
-// 2. Recalcular hash del Bundle
-const contenidoActual = canonicalizeBundle(bundle);
-const hashActual = sha256(contenidoActual);
-
-// 3. Comparar hashes
-if (hashActual === hashDocumento) {
-  // 4. Validar Certificado BCR
-  const certificado = parseCertificate(sello.data);
-  const esBCR = validarCadenaConfianza(certificado);
-  
-  if (esBCR) {
-    console.log("✓ Documento íntegro y sellado por BCR");
-    console.log("  Referencia:", sello.extension
-      .find(e => e.url.includes('gaudi-reference'))?.value);
-    return true;
-  }
-}
-return false;
-```
-
-#### Estados Posibles
+### Estados Posibles
 
 | Estado | Significado | Acción |
 |--------|-------------|--------|
@@ -252,9 +190,8 @@ return false;
 | **REVOCADO** | Certificado revocado | Rechazar documento |
 | **NO_VERIFICADO** | No tiene sello GAUDÍ | Requerir sellado |
 
-### Casos de Uso Clínicos
 
-#### Caso 1: Informe de Laboratorio Clínico
+### Caso 1: Informe de Laboratorio Clínico
 
 ```
 ┌──────────────────────────────────────┐
@@ -272,7 +209,7 @@ return false;
 └──────────────────────────────────────┘
 ```
 
-#### Caso 2: Nota Clínica de Consulta
+### Caso 2: Nota Clínica de Consulta
 
 ```
 ┌──────────────────────────────────────┐
@@ -290,7 +227,7 @@ return false;
 └──────────────────────────────────────┘
 ```
 
-#### Caso 3: Informe Forense/Legal
+### Caso 3: Informe Forense/Legal
 
 ```
 ┌──────────────────────────────────────┐
@@ -307,9 +244,7 @@ return false;
 └──────────────────────────────────────┘
 ```
 
-### Integración en Sistemas FHIR
-
-#### Arquitectura Recomendada
+### Arquitectura Recomendada
 
 ```
 ┌─────────────────┐
@@ -361,7 +296,6 @@ return false;
 
 #### ❌ Evitar
 
-- ❌ Sellar Bundles no-documento (transaction, batch, etc.)
 - ❌ Modificar documentos después de sellado
 - ❌ Usar sellos locales (usar siempre GAUDÍ)
 - ❌ Descartar referencia GAUDÍ
@@ -371,22 +305,12 @@ return false;
 
 ### Contacto y Recursos
 
-#### Banco Central de Costa Rica - GAUDÍ
-
-| Elemento | Detalles |
-|----------|----------|
-| **Portal Oficial** | https://servidorgaudí.bcr.fi.cr |
-| **API de Sello** | https://servidorgaudí.bcr.fi.cr/api/v1 |
-| **Documentación** | https://www.bcr.fi.cr/regulaciones/gaudi |
-| **Email Soporte** | gaudi@bcr.fi.cr |
-| **Teléfono** | +506 2243-2000 (ext. GAUDÍ) |
-| **Disponibilidad** | 24/7/365 |
-| **SLA** | < 100ms para sellado |
+Por definir
 
 #### Proceso de Integración
 
 1. **Registrarse** como institución autenticada en GAUDÍ
-2. **Obtener credenciales** (cliente OAuth2 o certificado mutuo TLS)
+2. **Obtener credenciales**
 3. **Implementar cliente** GAUDÍ en el sistema FHIR
 4. **Solicitar sello** para cada Bundle document
 5. **Validar sellos** al recibir documentos
@@ -394,21 +318,6 @@ return false;
 
 ### Referencias y Estándares
 
-- [ETSI TS 119 122 - Electronic Signatures and Infrastructures](https://www.etsi.org/deliver/etsi_ts/119100_119199/119122/03.01.01_60/ts_119122v030101p.pdf)
-- [IETF RFC 3161 - Time-Stamp Protocol](https://tools.ietf.org/html/rfc3161)
-- [Ley 8454 - Firma Digital y Documentos Electrónicos de Costa Rica](https://www.pgrweb.go.cr/normas/)
-- [FHIR Bundle.signature](http://hl7.org/fhir/R5/bundle.html#signature)
-- [FHIR Composition](http://hl7.org/fhir/R5/composition.html)
-- [W3C Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model/)
+Por definir
 
-### Conclusión
 
-GAUDÍ proporciona una solución confiable, legal y técnicamente sólida para el sellado de documentos clínicos en formato FHIR. Su integración asegura que los documentos clínicos digitales pueden circular con garantía de:
-
-- ✓ **Autenticidad**: Procedencia verificable
-- ✓ **Integridad**: Imposible modificar sin detectarse
-- ✓ **No Repudio**: El emisor no puede negar autoría
-- ✓ **Legalidad**: Reconocido por ley costarricense
-- ✓ **Trazabilidad**: Auditoría completa y perpetua
-
-Esto es fundamental para la confianza en los sistemas de información de salud en Costa Rica.
