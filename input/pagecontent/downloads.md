@@ -1,6 +1,6 @@
 # Descargas
 
-Esta página proporciona enlaces e instrucciones para descargar todos los recursos de la Guía de Implementación de Reportes de Imágenes Médicas de HL7 FHIR Costa Rica.
+Esta página proporciona enlaces e instrucciones para descargar todos los recursos de la Guía de Implementación CORE de Costa Rica, incluyendo la guía de implementación en formato PDF, los archivos de recursos FHIR, y los paquetes NPM relacionados.
 
 
 ## Descargas Directas
