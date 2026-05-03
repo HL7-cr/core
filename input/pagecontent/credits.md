@@ -1,6 +1,6 @@
 # Créditos
 
-Esta página reconoce las contribuciones y fuentes utilizadas en el desarrollo de la Guía de Implementación Core de HL7 FHIR Costa Rica.
+Esta página reconoce las contribuciones y fuentes utilizadas en el desarrollo de la Guía de Implementación Core de HL7® FHIR® Costa Rica.
 
 ---
 
@@ -61,11 +61,11 @@ Instituciones que participaron activamente:
 
 ### Estándares Base
 
-**FHIR (Fast Healthcare Interoperability Resources)**
+**HL7® FHIR® (Fast Healthcare Interoperability Resources)**
 - Versión: Release 5 (R5)
 - Especificación: https://hl7.org/fhir/R5/
-- Licencia: CC0 (Dominio Público)
-- Mantendido por: HL7 International
+- Licencia: CC0 (Dominio Público) — contenido normativo © HL7.org 2011+
+- Mantenido por: Health Level Seven International
 
 ### Sistemas de Codificación
 
@@ -100,10 +100,18 @@ Instituciones que participaron activamente:
 
 ## Licencia
 
-**Creative Commons Attribution 4.0 International (CC BY 4.0)**
+**Creative Commons Attribution 4.0 International (CC-BY-4.0)**
 
 Libre para usar, modificar y distribuir con atribución.
-Vea: https://creativecommons.org/licenses/by/4.0/
+Vea: [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/){:target="_blank"}
+
+---
+
+## Aviso de Marcas Registradas HL7®
+
+HL7®, FHIR® y el logotipo FHIR (diseño de llama) son marcas registradas de Health Level Seven International. Su uso en esta guía no implica respaldo por parte de HL7. Para más información, consulte la [Política de Propiedad Intelectual de HL7](https://www.hl7.org/legal/ippolicy.cfm){:target="_blank"}.
+
+Esta guía de implementación fue desarrollada usando el estándar HL7® FHIR® versión 5.0.0 (R5). El contenido normativo de FHIR es © HL7.org 2011+. Todos los derechos reservados.
 
 ---
 

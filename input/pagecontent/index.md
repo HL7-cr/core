@@ -17,7 +17,9 @@ Para obtener una descripción detallada de estos diferentes usos de CR Core, con
 ### Contexto
 La transformación digital del sistema de salud en Costa Rica requiere mecanismos estandarizados que permitan el intercambio oportuno, seguro y confiable de información clínica y administrativa entre los distintos actores del ecosistema de salud. La diversidad de sistemas de información, proveedores tecnológicos y niveles de madurez digital ha generado históricamente silos de información que dificultan la continuidad de la atención, la toma de decisiones basada en datos y la interoperabilidad a nivel nacional y regional.
 
-En este contexto, la adopción del estándar HL7 FHIR (Fast Healthcare Interoperability Resources) se establece como un habilitador fundamental para lograr la interoperabilidad semántica, técnica y organizacional. FHIR proporciona un marco moderno, extensible y ampliamente adoptado que facilita el intercambio de información en salud mediante el uso de recursos bien definidos, perfiles, extensiones y vocabularios controlados.
+En este contexto, la adopción del estándar HL7® FHIR® (Fast Healthcare Interoperability Resources) se establece como un habilitador fundamental para lograr la interoperabilidad semántica, técnica y organizacional. FHIR® proporciona un marco moderno, extensible y ampliamente adoptado que facilita el intercambio de información en salud mediante el uso de recursos bien definidos, perfiles, extensiones y vocabularios controlados.
+
+> **Aviso de marcas registradas:** HL7®, FHIR® y el logotipo FHIR (diseño de llama) son marcas registradas de Health Level Seven International. Su uso en esta guía no implica respaldo por parte de HL7.
 
 La Guía de Implementación CORE FHIR de Costa Rica define el conjunto mínimo de perfiles, extensiones, terminologías y reglas de conformidad necesarias para asegurar una base común de interoperabilidad entre los sistemas que intercambian información en el país. Esta guía busca establecer un lenguaje compartido que permita la evolución progresiva de los sistemas de información en salud, respetando la autonomía tecnológica de las organizaciones, pero garantizando la coherencia y compatibilidad a nivel nacional.
 
@@ -29,12 +31,12 @@ CR Core es particularmente útil para definir:
 - Se asume el soporte de las aplicaciones del cliente.
 - La base de las guías de implementación posteriores.
 
-La implementación de las capacidades definidas en CR Core permite desarrollar especificaciones, aplicaciones y lógica de negocio con confianza. Este documento es una especificación funcional que los desarrolladores de sistemas FHIR®© pueden implementar directamente.
+La implementación de las capacidades definidas en CR Core permite desarrollar especificaciones, aplicaciones y lógica de negocio con confianza. Este documento es una especificación funcional que los desarrolladores de sistemas FHIR® pueden implementar directamente.
 
-Los eventos Connectathon de FHIR®© son clave para verificar la idoneidad de la guía para su implementación. Esta guía de implementación se utilizará como base para los eventos Connectathon costarricenses.
+Los eventos Connectathon de FHIR® son clave para verificar la idoneidad de la guía para su implementación. Esta guía de implementación se utilizará como base para los eventos Connectathon costarricenses.
 
 ### Como Leer Esta Guía
-Esta Guía de Implementación está diseñada para desarrolladores, arquitectos de software, administradores de TI y profesionales de la salud que buscan implementar soluciones basadas en el estándar HL7 FHIR en Costa Rica. Se recomienda comenzar explorando los perfiles disponibles y sus especificaciones técnicas para integrarlos en aplicaciones y sistemas existentes.
+Esta Guía de Implementación está diseñada para desarrolladores, arquitectos de software, administradores de TI y profesionales de la salud que buscan implementar soluciones basadas en el estándar HL7® FHIR® en Costa Rica. Se recomienda comenzar explorando los perfiles disponibles y sus especificaciones técnicas para integrarlos en aplicaciones y sistemas existentes.
 
 ### Licencia y Términos Legales
 Esta guía está disponible bajo licencia **Creative Commons Attribution 4.0 International (CC BY 4.0)**.

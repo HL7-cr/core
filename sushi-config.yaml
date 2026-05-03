@@ -24,7 +24,7 @@ language: es
 copyrightYear: 2025+
 date: 2025-11-29
 copyright: >-
-  Utilizado con permiso de HL7 International, todos los derechos reservados Licencia Creative Commons
+  Derechos de autor (c) 2025+, Iniciativa HL7 Costa Rica. Este trabajo se distribuye bajo la licencia CC-BY-4.0. HL7®, FHIR® y el logotipo FHIR (diseño de llama) son marcas registradas de Health Level Seven International. Su uso no implica respaldo por parte de HL7. El contenido normativo de FHIR es © HL7.org 2011+. Todos los derechos reservados.
 
 releaseLabel: ci-build
 license: CC-BY-4.0
