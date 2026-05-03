@@ -3,7 +3,7 @@ packageId: hl7.fhir.cr.core
 canonical: https://hl7.or.cr/fhir/core
 name: CRcore
 
-title: HL7® FHIR® Costa Rica - Core
+title: Guía de Implementación CR Base FHIR®
 description: >-
   Guía de implementación de HL7® FHIR® Costa Rica - Core. Esta guía de implementación
   define los recursos, perfiles, extensiones y otros artefactos FHIR necesarios para
