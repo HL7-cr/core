@@ -19,7 +19,7 @@ La transformación digital del sistema de salud en Costa Rica requiere mecanismo
 
 En este contexto, la adopción del estándar HL7® FHIR® (Fast Healthcare Interoperability Resources) se establece como un habilitador fundamental para lograr la interoperabilidad semántica, técnica y organizacional. FHIR® proporciona un marco moderno, extensible y ampliamente adoptado que facilita el intercambio de información en salud mediante el uso de recursos bien definidos, perfiles, extensiones y vocabularios controlados.
 
-> **Aviso de marcas registradas:** HL7®, FHIR® y el logotipo FHIR (diseño de llama) son marcas registradas de Health Level Seven International. Su uso en esta guía no implica respaldo por parte de HL7.
+> **Aviso de marcas registradas:** HL7®, FHIR® y el logotipo FHIR (diseño de llama) son marcas registradas de Health Level Seven International. Su uso en esta guía no implica respaldo por parte de HL7®.
 
 La Guía de Implementación CORE FHIR de Costa Rica define el conjunto mínimo de perfiles, extensiones, terminologías y reglas de conformidad necesarias para asegurar una base común de interoperabilidad entre los sistemas que intercambian información en el país. Esta guía busca establecer un lenguaje compartido que permita la evolución progresiva de los sistemas de información en salud, respetando la autonomía tecnológica de las organizaciones, pero garantizando la coherencia y compatibilidad a nivel nacional.
 
@@ -47,7 +47,7 @@ Usted es libre de:
 - Usar comercialmente
 
 Bajo los términos de:
-- Atribución apropiada a HL7 Costa Rica
+- Atribución apropiada a la Iniciativa de HL7® Costa Rica
 - Sin garantías adicionales más allá de las especificadas
 
 Para más información, visite [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
@@ -57,7 +57,7 @@ Esta guía es producto del trabajo colaborativo realizado con participantes de:
 
 | Nombre                           | Rol                                         | Organización/Institución                    |
 | -------------------------------- | ------------------------------------------- | ------------------------------------------- |
-| Ing. Alejandro Benavides         | Coordinación, Autor y Asedor                | Meddyg - DHIT Costa Rica                    |
+| Ing. Alejandro Benavides         | Coordinación, Autor y Asesor                | Meddyg - DHIT Costa Rica                    |
 | Ing. Deivert Sivianny Guiltrichs | Coordinación Nacional                       | Ministerio de Salud                         |
 | Ing. Pedro Meckbel               | Coordinación Nacional                       | Ministerio de Salud                         |
 | Ing. Manuel Rodriguez            | Coordinación Institucional                  | Caja Costarricense del Seguro Social (CCSS) |

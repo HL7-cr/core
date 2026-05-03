@@ -3,9 +3,9 @@ packageId: hl7.fhir.cr.core
 canonical: https://hl7.or.cr/fhir/core
 name: CRcore
 
-title: HL7 FHIR Costa Rica - Core
+title: HL7® FHIR® Costa Rica - Core
 description: >-
-  Guía de implementación de HL7 FHIR Costa Rica - Core. Esta guía de implementación
+  Guía de implementación de HL7® FHIR® Costa Rica - Core. Esta guía de implementación
   define los recursos, perfiles, extensiones y otros artefactos FHIR necesarios para
   apoyar la interoperabilidad de la información de salud en Costa Rica.
 
@@ -24,18 +24,18 @@ language: es
 copyrightYear: 2025+
 date: 2025-11-29
 copyright: >-
-  Derechos de autor (c) 2025+, Iniciativa HL7 Costa Rica. Este trabajo se distribuye bajo la licencia CC-BY-4.0. HL7®, FHIR® y el logotipo FHIR (diseño de llama) son marcas registradas de Health Level Seven International. Su uso no implica respaldo por parte de HL7. El contenido normativo de FHIR es © HL7.org 2011+. Todos los derechos reservados.
+  Derechos de autor (c) 2025+, Iniciativa HL7® Costa Rica. Este trabajo se distribuye bajo la licencia CC-BY-4.0. HL7®, FHIR® y el logotipo FHIR (diseño de llama) son marcas registradas de Health Level Seven International. Su uso no implica respaldo por parte de HL7®. El contenido normativo de FHIR es © HL7.org 2011+. Todos los derechos reservados.
 
 releaseLabel: ci-build
 license: CC-BY-4.0
 jurisdiction: urn:iso:std:iso:3166#CR "Costa Rica"
 publisher:
-  name: Iniciativa HL7 Costa Rica
+  name: Iniciativa HL7® Costa Rica
   url: https://hl7.or.cr
   email: info@hl7.or.cr
 
 contact:
-  - name: Iniciativa HL7 Costa Rica
+  - name: Iniciativa HL7® Costa Rica
     telecom:
       - system: email
         value: info@hl7.or.cr
